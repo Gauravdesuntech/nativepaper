@@ -1,14 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { MD3LightTheme as DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import TextInputs from './Component/TextInputs';
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    secondary: 'yellow',
+  },
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider theme={theme}>
+      <View>
+        <TextInputs/>
+      </View>
+     
+    </PaperProvider>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
