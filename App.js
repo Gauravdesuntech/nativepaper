@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { MD3LightTheme as DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import TextInputs from './Component/TextInputs';
+import { MD3LightTheme as DefaultTheme, Provider as PaperProvider, Text } from 'react-native-paper';
+import CombinePage from './Component/CombinePage';
+import Icons from './Component/Icons';
+import { NavigationContainer } from '@react-navigation/native';
+import MainStackNavigation from './Component/Navigation';
+
+
 
 const theme = {
   ...DefaultTheme,
@@ -15,10 +20,9 @@ const theme = {
 export default function App() {
   return (
     <PaperProvider theme={theme}>
-      <View>
-        <TextInputs/>
-      </View>
-     
+      <NavigationContainer>
+      <MainStackNavigation/>
+      </NavigationContainer>
     </PaperProvider>
   );
 }
