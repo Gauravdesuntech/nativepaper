@@ -12,7 +12,7 @@ const Headers= () => {
 
     const _goHome = () => {
         navigation.navigate('HomePage')
-        alert("Added Successfully")
+        alert("Added From Successfully")
     };
 
     return (
